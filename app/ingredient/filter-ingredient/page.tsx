@@ -19,10 +19,10 @@ export default function FilterIngredientPage() {
   const [isLoading, setIsLoading] = useState(true);
   const itemsPerPage = 8;
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const queryParam = urlParams.get("query");
-
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryParam = urlParams.get("query");
+
     const fetchData = async () => {
       try {
         setIsLoading(true);
@@ -43,7 +43,7 @@ export default function FilterIngredientPage() {
     };
 
     fetchData();
-  }, [queryParam]);
+  }, []);
 
   const handleSearch = (searchTerm: string) => {
     const filtered = lists.filter((meal) =>

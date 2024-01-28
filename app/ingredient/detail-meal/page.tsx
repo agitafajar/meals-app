@@ -65,10 +65,10 @@ export default function DetailMealPage() {
   const [filteredLists, setFilteredLists] = useState<DetailMealProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const queryParam = urlParams.get("query");
-
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryParam = urlParams.get("query");
+
     const fetchData = async () => {
       try {
         setIsLoading(true);
@@ -90,7 +90,7 @@ export default function DetailMealPage() {
     };
 
     fetchData();
-  }, [queryParam]);
+  }, []);
 
   return (
     <div className="text-center my-12">
