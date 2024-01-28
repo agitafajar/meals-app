@@ -21,7 +21,6 @@ export default function FilterIngredientPage() {
 
   const urlParams = new URLSearchParams(window.location.search);
   const queryParam = urlParams.get("query");
-  console.log("queryParam", queryParam);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +32,6 @@ export default function FilterIngredientPage() {
             `/api/ingredient/filter-ingredient?query=${queryParam}`
           );
           const data = await response.json();
-          console.log("datadata", data);
           setLists(data.meals);
           setFilteredLists(data.meals);
         }

@@ -67,7 +67,6 @@ export default function DetailMealPage() {
 
   const urlParams = new URLSearchParams(window.location.search);
   const queryParam = urlParams.get("query");
-  console.log("queryParam", queryParam);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,7 +78,6 @@ export default function DetailMealPage() {
             `/api/ingredient/detail-meal?query=${queryParam}`
           );
           const data = await response.json();
-          console.log("datadata", data);
           const limitedMeals = data.meals.slice(0, 50);
           setLists(limitedMeals);
           setFilteredLists(limitedMeals);
